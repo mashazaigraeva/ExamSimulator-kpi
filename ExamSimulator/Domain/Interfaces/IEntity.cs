@@ -1,4 +1,7 @@
-public interface IEntity
+namespace ExamSimulator.Domain.Interfaces
 {
-    Guid Id { get; }
+    public interface IEntity
+    {
+        Guid Id { get; }
+    }
 }

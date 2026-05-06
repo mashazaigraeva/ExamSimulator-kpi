@@ -1,4 +1,5 @@
 using ExamSimulator.Data.Interfaces;
+using ExamSimulator.Domain.Interfaces;
 
 namespace ExamSimulator.Data.Repositories
 {

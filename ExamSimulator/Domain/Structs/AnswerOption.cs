@@ -1,5 +1,8 @@
-public struct AnswerOption
+namespace ExamSimulator.Domain.Structs
 {
-    public string Text { get; set; }
-    public bool IsCorrect { get; set; }
+    public struct AnswerOption
+    {
+        public string Text { get; set; }
+        public bool IsCorrect { get; set; }
+    }
 }

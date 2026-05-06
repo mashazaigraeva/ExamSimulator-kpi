@@ -1,3 +1,5 @@
+using ExamSimulator.Domain.Interfaces;
+
 namespace ExamSimulator.Domain.Models
 {
     public class Topic : IEntity

@@ -1,6 +1,11 @@
-public class Test : IEntity
+using ExamSimulator.Domain.Interfaces;
+
+namespace ExamSimulator.Domain.Models
 {
-    public Guid Id { get; private set; } = Guid.NewGuid();
-    public string Title { get; set; }
-    public List<Question> Questions { get; set; } = new List<Question>();
+    public class Test : IEntity
+    {
+        public Guid Id { get; private set; } = Guid.NewGuid();
+        public string Title { get; set; }
+        public List<Question> Questions { get; set; } = new List<Question>();
+    }
 }

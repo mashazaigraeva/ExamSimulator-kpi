@@ -1,7 +1,7 @@
 using ExamSimulator.Data.Interfaces;
 using ExamSimulator.Domain.Models;
 
-namespace ExamSimulator.BusinessLogic.Services
+namespace ExamSimulator.Services
 {
     public class StatisticsService
     {

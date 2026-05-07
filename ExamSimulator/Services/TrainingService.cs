@@ -1,6 +1,6 @@
 using ExamSimulator.Domain.Models;
 
-namespace ExamSimulator.BusinessLogic.Services
+namespace ExamSimulator.Services
 {
     public class TrainingService
     {

@@ -1,5 +1,7 @@
 using System.Text.Json;
 using ExamSimulator.Data.Interfaces;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 
 namespace ExamSimulator.Data.Storage
 {
@@ -11,7 +13,8 @@ namespace ExamSimulator.Data.Storage
             {
                 JsonSerializerOptions options = new JsonSerializerOptions 
                 { 
-                    WriteIndented = true 
+                    WriteIndented = true,
+                    Encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Cyrillic)
                 };
                 
                 string json = JsonSerializer.Serialize(data, options);

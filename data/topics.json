@@ -1,0 +1,69 @@
+[
+  {
+    "Id": "f0eff470-ec56-441e-9f04-4c20a14cee89",
+    "Name": "Основи C#",
+    "Tests": [
+      {
+        "Id": "1afc8058-7f54-496e-a61c-951f71768239",
+        "Title": "Вступний тест",
+        "Questions": [
+          {
+            "QuestionType": "Single",
+            "Options": [
+              {
+                "Text": "float",
+                "IsCorrect": false
+              },
+              {
+                "Text": "bool",
+                "IsCorrect": false
+              },
+              {
+                "Text": "string",
+                "IsCorrect": false
+              },
+              {
+                "Text": "int",
+                "IsCorrect": true
+              }
+            ],
+            "Id": "9dd11881-bebb-4168-9382-ce2e144914e8",
+            "Text": "Який тип даних використовується для цілих чисел?",
+            "Difficulty": 1
+          },
+          {
+            "QuestionType": "Multiple",
+            "Options": [
+              {
+                "Text": "for",
+                "IsCorrect": true
+              },
+              {
+                "Text": "switch",
+                "IsCorrect": false
+              },
+              {
+                "Text": "if",
+                "IsCorrect": false
+              },
+              {
+                "Text": "while",
+                "IsCorrect": true
+              }
+            ],
+            "Id": "2353b5c0-4dc3-40c3-b4b5-73d33293f7bb",
+            "Text": "Оберіть всі циклічні конструкції в C#:",
+            "Difficulty": 2
+          },
+          {
+            "QuestionType": "Open",
+            "CorrectAnswerText": "Делегат",
+            "Id": "dba143ae-a17a-4913-9e5d-20197fea94c3",
+            "Text": "Тип, який зберігає посилання на метод з певною сигнатурою",
+            "Difficulty": 1
+          }
+        ]
+      }
+    ]
+  }
+]

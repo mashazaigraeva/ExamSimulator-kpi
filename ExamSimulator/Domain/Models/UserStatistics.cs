@@ -10,5 +10,14 @@ namespace ExamSimulator.Domain.Models
         public DateTime SessionDate { get; set; } = DateTime.Now;
         public double TotalScore { get; set; }
         public int MaxPossibleScore { get; set; }
+
+        public double CalculatePercentage()
+        {
+            if (MaxPossibleScore <= 0)
+            {
+                return 0.0;
+            }
+            return (TotalScore / MaxPossibleScore) * 100.0;
+        }
     }
 }

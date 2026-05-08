@@ -6,10 +6,14 @@ namespace ExamSimulator.Services
     public class StatisticsService
     {
         private readonly IRepository<UserStatistics> _statsRepository;
+        private readonly IDataStorage<UserStatistics> _statsStorage;
+        private readonly string _storagePath;
 
-        public StatisticsService(IRepository<UserStatistics> statsRepository)
+        public StatisticsService(IRepository<UserStatistics> statsRepository, IDataStorage<UserStatistics> statsStorage, string storagePath)
         {
             _statsRepository = statsRepository;
+            _statsStorage = statsStorage;
+            _storagePath = storagePath;
         }
 
         public void RecordSessionResult(Topic topic, double score, int maxScore)
@@ -29,6 +33,7 @@ namespace ExamSimulator.Services
             };
 
             _statsRepository.Add(stat);
+            SaveChanges();
         }
 
         public double CalculateAverageScorePercentage(Guid topicId)
@@ -41,10 +46,9 @@ namespace ExamSimulator.Services
             {
                 UserStatistics current = allStats[i];
                 
-                if (current.TopicId == topicId && current.MaxPossibleScore > 0)
+                if (current.TopicId == topicId)
                 {
-                    double sessionPercentage = (current.TotalScore / current.MaxPossibleScore) * 100.0;
-                    totalPercentage += sessionPercentage;
+                    totalPercentage += current.CalculatePercentage();
                     sessionsCount++;
                 }
             }
@@ -57,9 +61,37 @@ namespace ExamSimulator.Services
             return totalPercentage / sessionsCount;
         }
 
+        public void ShowStatistics()
+        {
+            List<UserStatistics> history = GetFullHistory();
+
+            if (history.Count == 0)
+            {
+                Console.WriteLine("\nІсторія порожня. Пройдіть хоча б один тест!");
+                return;
+            }
+
+            Console.WriteLine("\n--- Ваші результати ---");
+            Console.WriteLine("№   | Тема                 | Дата       | Бал   | %");
+            Console.WriteLine("--------------------------------------------------");
+
+            for (int i = 0; i < history.Count; i++)
+            {
+                UserStatistics stat = history[i];
+                double percentage = stat.CalculatePercentage();
+                string dateStr = stat.SessionDate.ToShortDateString();
+
+                Console.WriteLine($"{i + 1,-3} | {stat.TopicName,-20} | {stat.SessionDate.ToShortDateString()} | {stat.TotalScore}/{stat.MaxPossibleScore} | {percentage:F1}%");
+            }
+        }
         public List<UserStatistics> GetFullHistory()
         {
             return _statsRepository.GetAll();
+        }
+
+        private void SaveChanges()
+        {
+            _statsStorage.SaveToFile(_statsRepository.GetAll(), _storagePath);
         }
     }
 }

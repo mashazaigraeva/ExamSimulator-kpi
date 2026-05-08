@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "a653370c-b6cb-4ed9-9505-0dee92ef39b3",
+    "TopicId": "cc5b0330-a04a-475a-a5c9-79f877f8bd70",
+    "TopicName": "Основи C#",
+    "SessionDate": "2026-05-08T20:22:22.4446188+03:00",
+    "TotalScore": 2,
+    "MaxPossibleScore": 2
+  },
+  {
+    "Id": "33592dd2-a926-42ae-b862-cbef68f51450",
+    "TopicId": "cc5b0330-a04a-475a-a5c9-79f877f8bd70",
+    "TopicName": "Основи C#",
+    "SessionDate": "2026-05-08T20:25:52.2154723+03:00",
+    "TotalScore": 3,
+    "MaxPossibleScore": 3
+  },
+  {
+    "Id": "88a3cf8e-119b-4728-945c-afc11c1a8a57",
+    "TopicId": "902e477d-8608-4478-b0eb-6910283e7103",
+    "TopicName": "Основи C#",
+    "SessionDate": "2026-05-08T20:30:31.9719607+03:00",
+    "TotalScore": 3,
+    "MaxPossibleScore": 3
+  },
+  {
+    "Id": "0bbdc7d5-384a-40f9-8770-5859f70da869",
+    "TopicId": "f0eff470-ec56-441e-9f04-4c20a14cee89",
+    "TopicName": "Основи C#",
+    "SessionDate": "2026-05-08T20:31:14.0504458+03:00",
+    "TotalScore": 2,
+    "MaxPossibleScore": 2
+  }
+]

@@ -6,10 +6,19 @@ namespace ExamSimulator.Services
     public class ContentManagerService
     {
         private readonly IRepository<Topic> _topicRepository;
+        private readonly IDataStorage<Topic> _topicStorage;
+        private readonly string _storagePath;
 
-        public ContentManagerService(IRepository<Topic> topicRepository)
+        public ContentManagerService(IRepository<Topic> topicRepository, IDataStorage<Topic> topicStorage, string storagePath)
         {
             _topicRepository = topicRepository;
+            _topicStorage = topicStorage;
+            _storagePath = storagePath;
+        }
+
+        public List<Topic> GetAllTopics()
+        {
+            return _topicRepository.GetAll();
         }
 
         public bool CreateTopic(string name)
@@ -21,6 +30,7 @@ namespace ExamSimulator.Services
 
             Topic newTopic = new Topic { Name = name };
             _topicRepository.Add(newTopic);
+            SaveChanges();
             return true;
         }
 
@@ -30,6 +40,7 @@ namespace ExamSimulator.Services
             if (existing != null)
             {
                 _topicRepository.Remove(topicId);
+                SaveChanges();
                 return true;
             }
             return false;
@@ -50,8 +61,10 @@ namespace ExamSimulator.Services
 
             Test newTest = new Test { Title = testTitle };
             topic.Tests.Add(newTest);
+            SaveChanges();
             return true;
         }
+
 
         public bool AddQuestionToTest(Guid topicId, Guid testId, Question question)
         {
@@ -68,12 +81,17 @@ namespace ExamSimulator.Services
                     if (topic.Tests[i].Id == testId)
                     {
                         topic.Tests[i].Questions.Add(question);
+                        SaveChanges();
                         return true;
                     }
                 }
             }
-
             return false;
+        }
+
+        private void SaveChanges()
+        {
+            _topicStorage.SaveToFile(_topicRepository.GetAll(), _storagePath);
         }
     }
 }

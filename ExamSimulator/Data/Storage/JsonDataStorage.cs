@@ -11,6 +11,12 @@ namespace ExamSimulator.Data.Storage
         {
             try
             {
+                string directory = Path.GetDirectoryName(filePath);
+                if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+                
                 JsonSerializerOptions options = new JsonSerializerOptions 
                 { 
                     WriteIndented = true,

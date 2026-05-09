@@ -13,39 +13,29 @@ namespace ExamSimulator.Services
 
         public List<Question> GenerateSession(Test test, Func<Question, bool> filter, int limit)
         {
-            List<Question> sessionQuestions = new List<Question>();
+            List<Question> filteredQuestions = new List<Question>();
             
             for (int i = 0; i < test.Questions.Count; i++)
+            {
+                if (filter(test.Questions[i]))
+                {
+                    filteredQuestions.Add(test.Questions[i]);
+                }
+            }
+            ShuffleQuestions(filteredQuestions);
+
+            List<Question> sessionQuestions = new List<Question>();
+            for (int i = 0; i < filteredQuestions.Count; i++)
             {
                 if (sessionQuestions.Count >= limit)
                 {
                     break;
                 }
-
-                if (filter(test.Questions[i]))
-                {
-                    sessionQuestions.Add(test.Questions[i]);
-                }
+                sessionQuestions.Add(filteredQuestions[i]);
             }
 
             return sessionQuestions;
         }
-
-        /*private void CollectQuestionsFromTest(Test test, Func<Question, bool> filter, List<Question> resultList)
-        {
-            if (test.Questions == null)
-            {
-                return;
-            } 
-
-            for (int j = 0; j < test.Questions.Count; j++)
-            {
-                if (filter(test.Questions[j]))
-                {
-                    resultList.Add(test.Questions[j]);
-                }
-            }
-        }*/
 
         public void ShuffleOptions(Question question)
         {

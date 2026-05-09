@@ -92,10 +92,14 @@ namespace ExamSimulator.UI
             }
 
             ShowAllTopics();
-            Console.Write("Введіть номер теми для видалення: ");
+            Console.Write("Введіть номер теми для видалення (або 0 для скасування): ");
             string input = Console.ReadLine();
-            int index;
+            if (input == "0")
+            {
+                return;
+            }
 
+            int index;
             if (int.TryParse(input, out index) && index >= 1 && index <= topics.Count)
             {
                 Topic topicToDelete = topics[index - 1];
@@ -144,8 +148,8 @@ namespace ExamSimulator.UI
             {
                 return;
             }
-            int index;
 
+            int index;
             if (int.TryParse(input, out index) && index >= 1 && index <= topics.Count)
             {
                 Console.Write("Введіть назву нового тесту (або 0 для скасування): ");
@@ -182,8 +186,14 @@ namespace ExamSimulator.UI
             } 
 
             ShowAllTopics();
-            Console.Write("Оберіть номер теми: ");
-            int tIndex = int.Parse(Console.ReadLine()) - 1;
+            Console.Write("Оберіть номер теми (або 0 для скасування): ");
+            string tInput = Console.ReadLine();            
+            if (tInput == "0")
+            {
+                return;
+            }
+
+            int tIndex = int.Parse(tInput) - 1;
 
             if (tIndex < 0 || tIndex >= topics.Count)
             {
@@ -198,9 +208,14 @@ namespace ExamSimulator.UI
             }
 
             ShowTestsInTopic(topic);
-            Console.Write("Оберіть номер тесту: ");
-            int testIndex = int.Parse(Console.ReadLine()) - 1;
+            Console.Write("Оберіть номер тесту (або 0 для скасування): ");
+            string testInput = Console.ReadLine();            
+            if (testInput == "0")
+            {
+                return;
+            }
 
+            int testIndex = int.Parse(testInput) - 1;
             if (testIndex >= 0 && testIndex < topic.Tests.Count)
             {
                 CreateQuestionFlow(topic.Id, topic.Tests[testIndex].Id);
@@ -218,16 +233,29 @@ namespace ExamSimulator.UI
 
         private void CreateQuestionFlow(Guid topicId, Guid testId)
         {
-            Console.WriteLine("\nТип запитання: 1 - Одиночний вибір, 2 - Множинний вибір, 3 - Відкрита відповідь");
+            Console.WriteLine("\nТип запитання: 1 - Одиночний вибір, 2 - Множинний вибір, 3 - Відкрита відповідь, 0 - Скасувати");
             string type = Console.ReadLine();
+            if (type == "0")
+            {
+                return;
+            } 
 
-            Console.Write("Текст запитання: ");
+            Console.Write("Текст запитання (або 0 для скасування): ");
             string text = Console.ReadLine();
+            if (text == "0")
+            {
+                return;
+            }
             
-            Console.WriteLine("Складність: 1 - Easy, 2 - Medium, 3 - Hard");
+            Console.WriteLine("Складність: 1 - Easy, 2 - Medium, 3 - Hard, 0 - Скасувати");
             Console.Write("Оберіть рівень: ");
-            int diffInput = int.Parse(Console.ReadLine());
-            
+            string diffInputCheck = Console.ReadLine();
+            if (diffInputCheck == "0")
+            {
+                return;
+            }
+
+            int diffInput = int.Parse(diffInputCheck);
             DifficultyLevel diff = (DifficultyLevel)diffInput;
 
             Question newQuestion = null;
@@ -255,8 +283,14 @@ namespace ExamSimulator.UI
         private SingleChoiceQuestion CreateSingleChoice(string text, DifficultyLevel diff)
         {
             SingleChoiceQuestion q = new SingleChoiceQuestion { Text = text, Difficulty = diff };
-            Console.Write("Кількість варіантів: ");
-            int count = int.Parse(Console.ReadLine());
+            Console.Write("Кількість варіантів (або 0 для скасування): ");
+            string countCheck = Console.ReadLine();
+            if (countCheck == "0")
+            {
+                return null;
+            }
+
+            int count = int.Parse(countCheck);
 
             for (int i = 0; i < count; i++)
             {
@@ -278,8 +312,14 @@ namespace ExamSimulator.UI
         private MultipleChoiceQuestion CreateMultipleChoice(string text, DifficultyLevel diff)
         {
             MultipleChoiceQuestion q = new MultipleChoiceQuestion { Text = text, Difficulty = diff };
-            Console.Write("Кількість варіантів: ");
-            int count = int.Parse(Console.ReadLine());
+            Console.Write("Кількість варіантів (або 0 для скасування): ");
+            string countCheck = Console.ReadLine();
+            if (countCheck == "0")
+            {
+                return null;
+            }
+
+            int count = int.Parse(countCheck);
 
             for (int i = 0; i < count; i++)
             {
@@ -301,10 +341,15 @@ namespace ExamSimulator.UI
 
         private OpenQuestion CreateOpenEndedQuestion(string text, DifficultyLevel diff)
         {
-            OpenQuestion q = new OpenQuestion { Text = text, Difficulty = diff };
-            
-            Console.Write("Введіть правильну відповідь (еталон): ");
-            q.CorrectAnswerText = Console.ReadLine();
+            OpenQuestion q = new OpenQuestion { Text = text, Difficulty = diff };            
+            Console.Write("Введіть правильну відповідь (еталон, або 0 для скасування): ");
+            string answer = Console.ReadLine();
+            if (answer == "0")
+            {
+                return null;
+            }
+
+            q.CorrectAnswerText = answer;
             
             return q;
         }

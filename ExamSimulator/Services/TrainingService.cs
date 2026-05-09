@@ -11,42 +11,27 @@ namespace ExamSimulator.Services
             _random = new Random();
         }
 
-        public List<Question> GenerateSession(Topic topic, Func<Question, bool> filterDelegate, int maxQuestions)
+        public List<Question> GenerateSession(Test test, Func<Question, bool> filter, int limit)
         {
-            if (topic == null || topic.Tests == null)
+            List<Question> sessionQuestions = new List<Question>();
+            
+            for (int i = 0; i < test.Questions.Count; i++)
             {
-                throw new ArgumentNullException(nameof(topic));
+                if (sessionQuestions.Count >= limit)
+                {
+                    break;
+                }
+
+                if (filter(test.Questions[i]))
+                {
+                    sessionQuestions.Add(test.Questions[i]);
+                }
             }
 
-            List<Question> filteredQuestions = new List<Question>();
-
-            for (int i = 0; i < topic.Tests.Count; i++)
-            {
-                CollectQuestionsFromTest(topic.Tests[i], filterDelegate, filteredQuestions);
-            }
-
-            ShuffleQuestions(filteredQuestions);
-
-            List<Question> finalSession = new List<Question>();
-            int limit;
-            if (filteredQuestions.Count < maxQuestions)
-            {
-               limit = filteredQuestions.Count;
-            }
-            else
-            {
-                limit = maxQuestions;
-            }
-
-            for (int k = 0; k < limit; k++)
-            {
-                finalSession.Add(filteredQuestions[k]);
-            }
-
-            return finalSession;
+            return sessionQuestions;
         }
 
-        private void CollectQuestionsFromTest(Test test, Func<Question, bool> filter, List<Question> resultList)
+        /*private void CollectQuestionsFromTest(Test test, Func<Question, bool> filter, List<Question> resultList)
         {
             if (test.Questions == null)
             {
@@ -60,7 +45,7 @@ namespace ExamSimulator.Services
                     resultList.Add(test.Questions[j]);
                 }
             }
-        }
+        }*/
 
         public void ShuffleOptions(Question question)
         {

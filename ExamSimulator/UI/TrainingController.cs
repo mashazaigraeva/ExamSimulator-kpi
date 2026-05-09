@@ -25,20 +25,62 @@ namespace ExamSimulator.UI
             List<Topic> topics = _topicRepository.GetAll();
             if (topics.Count == 0)
             {
-                Console.WriteLine("Немає доступних тем для тестування.");
+                Console.WriteLine("Немає доступних тем.");
                 return;
             }
 
-            PrintTopics(topics);
-            int topicIndex = GetTopicSelection(topics.Count);
-
-            if (topicIndex == -1)
+            Console.WriteLine("\nДоступні теми:");
+            for (int i = 0; i < topics.Count; i++)
             {
-                return; 
+                Console.WriteLine($"{i + 1}. {topics[i].Name}");
+            }
+
+            Console.Write("Оберіть номер теми: ");
+            string topicInput = Console.ReadLine();
+
+            int topicIndex = -1;
+            if (int.TryParse(topicInput, out int parsedTopicIndex))
+            {
+                topicIndex = parsedTopicIndex - 1;
+            }
+
+            if (topicIndex < 0 || topicIndex >= topics.Count)
+            {
+                Console.WriteLine("Невірний вибір теми.");
+                return;
             }
 
             Topic selectedTopic = topics[topicIndex];
-            RunSession(selectedTopic);
+
+            if (selectedTopic.Tests.Count == 0)
+            {
+                Console.WriteLine("У цій темі ще немає доступних тестів.");
+                return;
+            }
+
+            Console.WriteLine($"\nДоступні тести у темі '{selectedTopic.Name}':");
+            for (int i = 0; i < selectedTopic.Tests.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {selectedTopic.Tests[i].Title}");
+            }
+
+            Console.Write("Оберіть номер тесту: ");
+            string testInput = Console.ReadLine();
+
+            int testIndex = -1;
+            if (int.TryParse(testInput, out int parsedTestIndex))
+            {
+                testIndex = parsedTestIndex - 1;
+            }
+
+            if (testIndex < 0 || testIndex >= selectedTopic.Tests.Count)
+            {
+                Console.WriteLine("Невірний вибір тесту.");
+                return;
+            }
+
+            Test selectedTest = selectedTopic.Tests[testIndex];
+            RunSession(selectedTopic, selectedTest); 
         }
 
         private void PrintTopics(List<Topic> topics)
@@ -65,17 +107,17 @@ namespace ExamSimulator.UI
             return index - 1;
         }
 
-        private void RunSession(Topic topic)
+        private void RunSession(Topic topic, Test test)
         {
             AppConfig config = _settingsController.GetCurrentConfig();
             
             Func<Question, bool> allQuestionsFilter = delegate (Question q) { return true; };
-
-            List<Question> questions = _trainingService.GenerateSession(topic, allQuestionsFilter, config.QuestionsPerSession);
+            
+            List<Question> questions = _trainingService.GenerateSession(test, allQuestionsFilter, config.QuestionsPerSession);
 
             if (questions.Count == 0)
             {
-                Console.WriteLine("У цій темі немає запитань.");
+                Console.WriteLine("У цьому тесті немає запитань.");
                 return;
             }
 
@@ -86,8 +128,32 @@ namespace ExamSimulator.UI
                 totalScore += AskQuestion(questions[i], i + 1, config.ShowCorrectAnswersAfterQuestion);
             }
 
-            Console.WriteLine($"\nТренування завершено! Ваш бал: {totalScore} з {questions.Count}");
+            PrintSessionResult(totalScore, questions.Count, config.PassingScorePercentage);
+
             _statsService.RecordSessionResult(topic, totalScore, questions.Count);
+        }
+
+        private void PrintSessionResult(double totalScore, int maxScore, double passingPercentage)
+        {
+            Console.WriteLine($"\n--- РЕЗУЛЬТАТИ ТРЕНУВАННЯ ---");
+            Console.WriteLine($"Ваш бал: {totalScore} з {maxScore}");
+
+            double percentage = 0.0;
+            if (maxScore > 0)
+            {
+                percentage = (totalScore / maxScore) * 100.0;
+            }
+
+            Console.WriteLine($"Успішність: {percentage:F1}% (Мінімум для складання: {passingPercentage}%)");
+
+            if (percentage >= passingPercentage)
+            {
+                Console.WriteLine("Вітаємо! Тест успішно складено.");
+            }
+            else
+            {
+                Console.WriteLine("На жаль, тест не складено. Потрібно ще потренуватися!");
+            }
         }
 
         private double AskQuestion(Question question, int questionNumber, bool showCorrect)
@@ -99,6 +165,19 @@ namespace ExamSimulator.UI
             Console.Write("Ваша відповідь (якщо декілька, введіть через кому): ");
             string answer = Console.ReadLine();
 
+            List<string> userAnswers = ExtractUserAnswers(question, answer);  
+            
+            double score = question.CalculateScore(userAnswers);
+
+            Console.WriteLine($"Нараховано балів: {score}");
+
+            PrintFeedback(question, score, showCorrect);
+
+            return score;
+        }
+
+        private List<string> ExtractUserAnswers(Question question, string answer)
+        {
             List<string> userAnswers = new List<string>();
 
             if (question is SingleChoiceQuestion)
@@ -118,17 +197,56 @@ namespace ExamSimulator.UI
                     userAnswers.Add(answer.Trim());
                 }
             }
-            
-            double score = question.CalculateScore(userAnswers);
 
-            Console.WriteLine($"Нараховано балів: {score}");
+            return userAnswers;
+        }
 
-            if (showCorrect && score < 1.0)
+        private void PrintFeedback(Question question, double score, bool showCorrect)
+        {
+            if (score >= 1.0)
             {
-                Console.WriteLine("Ви зробили помилку або відповіли неповністю.");
+                Console.WriteLine("Вірно!");
+                return;
             }
 
-            return score;
+            Console.WriteLine("Ви зробили помилку або відповіли неповністю.");
+
+            if (showCorrect)
+            {
+                PrintCorrectAnswerForQuestion(question);
+            }
+        }
+
+        private void PrintCorrectAnswerForQuestion(Question question)
+        {
+            Console.WriteLine("Правильна відповідь:");
+
+            if (question is SingleChoiceQuestion)
+            {
+                SingleChoiceQuestion sq = (SingleChoiceQuestion)question;
+                PrintCorrectOptionsList(sq.Options);
+            }
+            else if (question is MultipleChoiceQuestion)
+            {
+                MultipleChoiceQuestion mq = (MultipleChoiceQuestion)question;
+                PrintCorrectOptionsList(mq.Options);
+            }
+            else if (question is OpenQuestion)
+            {
+                OpenQuestion oq = (OpenQuestion)question;
+                Console.WriteLine("- " + oq.CorrectAnswerText);
+            }
+        }
+
+        private void PrintCorrectOptionsList(List<AnswerOption> options)
+        {
+            for (int i = 0; i < options.Count; i++)
+            {
+                if (options[i].IsCorrect)
+                {
+                    Console.WriteLine("- " + options[i].Text);
+                }
+            }
         }
 
         private void PrintOptions(Question question)

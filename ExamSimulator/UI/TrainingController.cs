@@ -83,30 +83,6 @@ namespace ExamSimulator.UI
             RunSession(selectedTopic, selectedTest); 
         }
 
-        private void PrintTopics(List<Topic> topics)
-        {
-            Console.WriteLine("\nДоступні теми:");
-            for (int i = 0; i < topics.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}. {topics[i].Name}");
-            }
-        }
-
-        private int GetTopicSelection(int maxIndex)
-        {
-            Console.Write("Оберіть номер теми: ");
-            string input = Console.ReadLine();
-            int index;
-
-            if (!int.TryParse(input, out index) || index < 1 || index > maxIndex)
-            {
-                Console.WriteLine("Невірний вибір.");
-                return -1;
-            }
-
-            return index - 1;
-        }
-
         private void RunSession(Topic topic, Test test)
         {
             AppConfig config = _settingsController.GetCurrentConfig();
@@ -267,20 +243,6 @@ namespace ExamSimulator.UI
                     Console.WriteLine($"{j + 1}. {multiple.Options[j].Text}");
                 }
             }
-        }
-
-        private List<string> ParseAnswers(string input)
-        {
-            List<string> result = new List<string>();
-            if (!string.IsNullOrEmpty(input))
-            {
-                string[] parts = input.Split(',');
-                for (int j = 0; j < parts.Length; j++)
-                {
-                    result.Add(parts[j].Trim());
-                }
-            }
-            return result;
         }
 
         private List<string> ConvertInputToAnswerTexts(string input, List<AnswerOption> displayedOptions)

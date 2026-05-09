@@ -164,6 +164,20 @@ namespace ExamSimulator.Tests
             Assert.That(allStats.Count, Is.EqualTo(1));
             Assert.That(allStats[0].TotalScore, Is.EqualTo(0.0));
         }
+
+        [Test]
+        public void CalculateAverageScorePercentage_MultipleSessions_ReturnsCorrectAverage()
+        {
+            Topic topic = new Topic { Name = "ООП" };
+            
+            _statsService.RecordSessionResult(topic, 5.0, 10);
+            
+            _statsService.RecordSessionResult(topic, 10.0, 10);
+            
+            double average = _statsService.CalculateAverageScorePercentage(topic.Name);
+            
+            Assert.That(average, Is.EqualTo(75.0));
+        }
     }
 
     public class FakeDataStorage<T> : IDataStorage<T>

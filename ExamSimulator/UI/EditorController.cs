@@ -63,8 +63,12 @@ namespace ExamSimulator.UI
 
         private void AddNewTopic()
         {
-            Console.Write("Введіть назву нової теми: ");
+            Console.Write("Введіть назву нової теми (або 0 для скасування): ");
             string name = Console.ReadLine();
+            if (name == "0")
+            {
+                return;
+            }
 
             bool success = _contentService.CreateTopic(name);
             
@@ -134,14 +138,22 @@ namespace ExamSimulator.UI
             }
 
             ShowAllTopics();
-            Console.Write("\nВведіть номер теми, до якої бажаєте додати тест: ");
+            Console.Write("\nВведіть номер теми, до якої бажаєте додати тест (або 0 для скасування): ");
             string input = Console.ReadLine();
+            if (input == "0")
+            {
+                return;
+            }
             int index;
 
             if (int.TryParse(input, out index) && index >= 1 && index <= topics.Count)
             {
-                Console.Write("Введіть назву нового тесту: ");
+                Console.Write("Введіть назву нового тесту (або 0 для скасування): ");
                 string testName = Console.ReadLine();
+                if (testName == "0")
+                {
+                    return;
+                }
 
                 Topic selectedTopic = topics[index - 1];
                 bool success = _contentService.AddTestToTopic(selectedTopic.Id, testName);
@@ -164,13 +176,19 @@ namespace ExamSimulator.UI
         private void AddQuestionToTest()
         {
             List<Topic> topics = _contentService.GetAllTopics();
-            if (topics.Count == 0) return;
+            if (topics.Count == 0)
+            {
+                return;
+            } 
 
             ShowAllTopics();
             Console.Write("Оберіть номер теми: ");
             int tIndex = int.Parse(Console.ReadLine()) - 1;
 
-            if (tIndex < 0 || tIndex >= topics.Count) return;
+            if (tIndex < 0 || tIndex >= topics.Count)
+            {
+                return;
+            } 
             Topic topic = topics[tIndex];
 
             if (topic.Tests.Count == 0)

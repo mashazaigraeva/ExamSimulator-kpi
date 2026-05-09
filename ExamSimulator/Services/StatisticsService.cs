@@ -36,7 +36,7 @@ namespace ExamSimulator.Services
             SaveChanges();
         }
 
-        public double CalculateAverageScorePercentage(Guid topicId)
+        public double CalculateAverageScorePercentage(string topicName)
         {
             List<UserStatistics> allStats = _statsRepository.GetAll();
             double totalPercentage = 0.0;
@@ -46,7 +46,7 @@ namespace ExamSimulator.Services
             {
                 UserStatistics current = allStats[i];
                 
-                if (current.TopicId == topicId)
+                if (current.TopicName == topicName)
                 {
                     totalPercentage += current.CalculatePercentage();
                     sessionsCount++;
@@ -82,6 +82,30 @@ namespace ExamSimulator.Services
                 string dateStr = stat.SessionDate.ToShortDateString();
 
                 Console.WriteLine($"{i + 1,-3} | {stat.TopicName,-20} | {stat.SessionDate.ToShortDateString()} | {stat.TotalScore}/{stat.MaxPossibleScore} | {percentage:F1}%");
+            }
+
+            Console.WriteLine("\n--- Середня успішність по темах ---");
+            
+            List<string> processedTopics = new List<string>();
+            
+            for (int i = 0; i < history.Count; i++)
+            {
+                bool alreadyProcessed = false;
+                for (int j = 0; j < processedTopics.Count; j++)
+                {
+                    if (processedTopics[j] == history[i].TopicName)
+                    {
+                        alreadyProcessed = true;
+                        break;
+                    }
+                }
+
+                if (!alreadyProcessed)
+                {
+                    processedTopics.Add(history[i].TopicName);
+                    double avg = CalculateAverageScorePercentage(history[i].TopicName);
+                    Console.WriteLine($"- {history[i].TopicName}: {avg:F1}%");
+                }
             }
         }
         public List<UserStatistics> GetFullHistory()

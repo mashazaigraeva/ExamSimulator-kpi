@@ -66,11 +66,17 @@ namespace ExamSimulator.Services
         public bool DeleteQuestion(Guid topicId, Guid testId, Guid questionId)
         {
             Topic topic = _topicRepository.GetById(topicId);
-            if (topic == null) return false;
+            if (topic == null)
+            {
+                return false;
+            } 
 
             for (int i = 0; i < topic.Tests.Count; i++)
             {
-                if (topic.Tests[i].Id != testId) continue;
+                if (topic.Tests[i].Id != testId)
+                {
+                    continue;
+                } 
 
                 Test test = topic.Tests[i];
                 for (int j = 0; j < test.Questions.Count; j++)

@@ -32,7 +32,9 @@ namespace ExamSimulator.UI
             Console.WriteLine("2 - Видалити тему");
             Console.WriteLine("3 - Показати всі теми");
             Console.WriteLine("4 - Додати новий тест до теми");
-            Console.WriteLine("5 - Додати запитання до тесту");
+            Console.WriteLine("5 - Видалити тест");
+            Console.WriteLine("6 - Додати запитання до тесту");
+            Console.WriteLine("7 - Видалити запитання");
             Console.WriteLine("0 - Повернутися назад");
             Console.Write("Оберіть дію: ");
         }
@@ -57,7 +59,15 @@ namespace ExamSimulator.UI
             }
             else if (choice == "5")
             {
+                DeleteTest();
+            }
+            else if (choice == "6")
+            {
                 AddQuestionToTest();
+            }
+            else if (choice == "7")
+            {
+                DeleteQuestion();
             }
         }
 
@@ -119,6 +129,78 @@ namespace ExamSimulator.UI
             {
                 Console.WriteLine("Невірний номер.");
             }
+        }
+
+        private void DeleteTest()
+        {
+            List<Topic> topics = _contentService.GetAllTopics();
+            if (topics.Count == 0)
+            {
+                return;
+            } 
+
+            ShowAllTopics();
+            Console.Write("Оберіть тему (або 0): ");
+            string tInput = Console.ReadLine();
+            if (tInput == "0" || !int.TryParse(tInput, out int tIndex) || tIndex < 1 || tIndex > topics.Count)
+            {
+                return;
+            } 
+
+            Topic topic = topics[tIndex - 1];
+            ShowTestsInTopic(topic);
+            Console.Write("Оберіть номер тесту для видалення (або 0): ");
+            string testInput = Console.ReadLine();
+            if (testInput == "0" || !int.TryParse(testInput, out int testIndex) || testIndex < 1 || testIndex > topic.Tests.Count)
+            {
+                return;
+            } 
+
+            _contentService.DeleteTest(topic.Id, topic.Tests[testIndex - 1].Id);
+            Console.WriteLine("Тест видалено.");
+        }
+
+        private void DeleteQuestion()
+        {
+            List<Topic> topics = _contentService.GetAllTopics();
+            if (topics.Count == 0)
+            {
+                return;
+            } 
+
+            ShowAllTopics();
+            Console.Write("Оберіть тему (або 0): ");
+            string tInput = Console.ReadLine();
+            if (tInput == "0" || !int.TryParse(tInput, out int tIndex) || tIndex < 1 || tIndex > topics.Count)
+            {
+                return;
+            } 
+
+            Topic topic = topics[tIndex - 1];
+            ShowTestsInTopic(topic);
+            Console.Write("Оберіть тест (або 0): ");
+            string testInput = Console.ReadLine();
+            if (testInput == "0" || !int.TryParse(testInput, out int testIndex) || testIndex < 1 || testIndex > topic.Tests.Count)
+            {
+                return;
+            } 
+
+            Test test = topic.Tests[testIndex - 1];
+            Console.WriteLine("\nЗапитання у тесті:");
+            for (int i = 0; i < test.Questions.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {test.Questions[i].Text}");
+            }
+
+            Console.Write("Оберіть номер запитання для видалення (або 0): ");
+            string qInput = Console.ReadLine();
+            if (qInput == "0" || !int.TryParse(qInput, out int qIndex) || qIndex < 1 || qIndex > test.Questions.Count)
+            {
+                return;
+            } 
+
+            _contentService.DeleteQuestion(topic.Id, test.Id, test.Questions[qIndex - 1].Id);
+            Console.WriteLine("Запитання видалено.");
         }
 
         private void ShowAllTopics()
@@ -296,6 +378,11 @@ namespace ExamSimulator.UI
             {
                 Console.Write($"Варіант {i + 1}: ");
                 string optText = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(optText))
+                {
+                    Console.WriteLine("Варіант відповіді не може бути порожнім.");
+                    return null; 
+                }
                 Console.Write("Це правильна відповідь? (y/n): ");
                 string answer = Console.ReadLine();
                 bool isCorrect = false;

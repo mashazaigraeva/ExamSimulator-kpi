@@ -46,6 +46,46 @@ namespace ExamSimulator.Services
             return false;
         }
 
+        public bool DeleteTest(Guid topicId, Guid testId)
+        {
+            Topic topic = _topicRepository.GetById(topicId);
+            if (topic == null) return false;
+
+            for (int i = 0; i < topic.Tests.Count; i++)
+            {
+                if (topic.Tests[i].Id == testId)
+                {
+                    topic.Tests.RemoveAt(i);
+                    SaveChanges();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool DeleteQuestion(Guid topicId, Guid testId, Guid questionId)
+        {
+            Topic topic = _topicRepository.GetById(topicId);
+            if (topic == null) return false;
+
+            for (int i = 0; i < topic.Tests.Count; i++)
+            {
+                if (topic.Tests[i].Id != testId) continue;
+
+                Test test = topic.Tests[i];
+                for (int j = 0; j < test.Questions.Count; j++)
+                {
+                    if (test.Questions[j].Id == questionId)
+                    {
+                        test.Questions.RemoveAt(j);
+                        SaveChanges();
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         public bool AddTestToTopic(Guid topicId, string testTitle)
         {
             if (string.IsNullOrEmpty(testTitle))

@@ -1,10 +1,10 @@
 [
   {
-    "Id": "0103c0e4-ff04-4d25-b701-90713ea61413",
+    "Id": "62aa9f2c-b3cc-4531-ae30-8a255f239193",
     "Name": "Основи програмування",
     "Tests": [
       {
-        "Id": "3bb6a31a-ed60-472a-bcbd-075f788eaec3",
+        "Id": "d9f14291-959c-4557-9590-43542f06e724",
         "Title": "ООП",
         "Questions": [
           {
@@ -27,7 +27,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "14894019-17de-42c1-8cba-096235fd5d61",
+            "Id": "d6dcdf80-4c5d-408a-a8dc-69a5d2d5eb5f",
             "Text": "Який принцип ООП дозволяє приховати внутрішню логіку об\u0027єкта?",
             "Difficulty": 1
           },
@@ -51,14 +51,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "042ea7d5-7448-472c-a2ed-0d141a47aca7",
+            "Id": "0f8abd98-33e3-4bfc-94e8-3b542a060401",
             "Text": "Яке ключове слово використовується для наслідування класу в C#?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Конструктор",
-            "Id": "127a74f5-2f92-45b8-98c0-edf4bc024370",
+            "Id": "7861c3cb-2837-4215-8d3c-83c76716582a",
             "Text": "Як називається спеціальний метод класу, який викликається автоматично при створенні нового об\u0027єкта?",
             "Difficulty": 1
           },
@@ -82,14 +82,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "cbea95b0-bbe2-42ef-a29b-f588478f48f4",
+            "Id": "16b64c2b-0e64-4a6e-8f9e-4bd1b9007ddd",
             "Text": "Чи підтримує C# множинне наслідування класів?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "protected",
-            "Id": "b20ba217-6a37-485e-a5cc-3925dbb8f8ed",
+            "Id": "3af3d22a-6405-427c-be05-6cfa76d4f216",
             "Text": "Який модифікатор доступу робить поле видимим лише для поточного класу та його нащадків?",
             "Difficulty": 1
           },
@@ -113,7 +113,7 @@
                 "IsCorrect": true
               }
             ],
-            "Id": "cd0de9ed-3143-415f-85b6-7aa0ee3bf3bd",
+            "Id": "232305d6-8286-4a0b-b4e6-8398ebf87db8",
             "Text": "Оберіть ключові принципи ООП",
             "Difficulty": 2
           },
@@ -137,7 +137,7 @@
                 "IsCorrect": true
               }
             ],
-            "Id": "7de86c45-bcdc-4c60-8f52-137419886caa",
+            "Id": "5d3d9e85-8181-45d5-88e5-f198d09a0e0b",
             "Text": "Які з цих елементів можуть бути присутні в інтерфейсі C#?",
             "Difficulty": 2
           },
@@ -161,14 +161,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "7f0b2bb6-b099-4918-ad50-033772151b29",
+            "Id": "7c01acc9-960a-4731-aead-dd818da492d8",
             "Text": "Які типи методів дозволяють реалізувати поліморфізм через перевизначення?",
             "Difficulty": 2
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Поліморфізм",
-            "Id": "a0453302-add7-4c56-9452-1b6d6999e1a1",
+            "Id": "201d6dc1-e8ee-4566-8e1f-88bcc9fbf2e7",
             "Text": "Який термін описує здатність об\u0027єкта приймати багато форм, використовуючи посилання на базовий тип?",
             "Difficulty": 3
           },
@@ -192,14 +192,14 @@
                 "IsCorrect": true
               }
             ],
-            "Id": "0ca76b4f-ae29-4b9c-bac8-a36deda9b88b",
+            "Id": "0c99b13f-183a-4996-9d37-b65e00ebafd6",
             "Text": "Які твердження щодо статичних класів є вірними в C#?",
             "Difficulty": 3
           }
         ]
       },
       {
-        "Id": "e484c1c5-ef9c-4692-8ff2-8eb8495f2e3d",
+        "Id": "14c76bb0-147b-4e0f-b907-fea7f8af0e70",
         "Title": "Базові конструкції",
         "Questions": [
           {
@@ -222,14 +222,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "c0811cb9-8c7a-47c0-8203-3cf0024e3dd7",
+            "Id": "88fa2e33-f4ae-4e1d-b908-00ff233a13b7",
             "Text": "Який оператор використовується для порівняння значень на рівність?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "break",
-            "Id": "b763d753-3840-433c-858b-9ba67da59907",
+            "Id": "72a2dd85-688d-4052-8462-04267444806c",
             "Text": "Яке ключове слово зупиняє виконання циклу і виходить з нього?",
             "Difficulty": 1
           },
@@ -253,14 +253,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "b0db3215-14ce-4d3f-bef6-a8c533071a53",
+            "Id": "27211bc1-e607-484b-bd29-f516f264f28d",
             "Text": "Який тип даних використовується для зберігання цілих чисел?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": ";",
-            "Id": "9ea3582d-cc0a-47a6-ba8e-9d9ff858587d",
+            "Id": "074f6445-6895-4402-9074-e5c4fbb244a2",
             "Text": "Яким символом завершується більшість інструкцій у C#?",
             "Difficulty": 1
           },
@@ -284,7 +284,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "3682cca8-5997-4bff-ba83-6cda9bf5e445",
+            "Id": "60c64bb1-a38f-4852-9d1f-4376abf99456",
             "Text": "Що робить оператор \u002B\u002B?",
             "Difficulty": 1
           },
@@ -308,7 +308,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "f8f3751b-15f6-4c47-bf00-cd305f955885",
+            "Id": "27d0c566-8efe-418a-af48-d8529ee4362b",
             "Text": "Які з цих циклів існують у C#?",
             "Difficulty": 2
           },
@@ -332,7 +332,7 @@
                 "IsCorrect": true
               }
             ],
-            "Id": "54695353-285b-42fd-a7c3-2632dac0c00e",
+            "Id": "20bd6e82-f6da-419e-a365-d71b058bc81b",
             "Text": "Які оператори є логічними?",
             "Difficulty": 2
           },
@@ -356,14 +356,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "0ad4c4c3-a347-42d3-b68d-48696dd67504",
+            "Id": "739bc224-a53b-4947-b495-ceeecb70b4f8",
             "Text": "Оберіть правильні способи оголошення змінної в C#",
             "Difficulty": 2
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "finally",
-            "Id": "cb5479de-1e61-495f-8540-266c22a0207e",
+            "Id": "934ef317-5bfb-4ec5-8859-f2e8a8651e2b",
             "Text": "Як називається блок коду, який виконається завжди, незалежно від того, чи була помилка в блоці try-catch?",
             "Difficulty": 3
           },
@@ -387,14 +387,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "0f5267b4-6aa0-4aca-8d51-43a2a20e556e",
+            "Id": "f7528b8f-c253-486f-8d34-d983b686fcbf",
             "Text": "Які з цих типів є типами значень (Value Types)?",
             "Difficulty": 3
           }
         ]
       },
       {
-        "Id": "ab68200e-a732-4fd3-9c82-8c99f9d90890",
+        "Id": "493c296d-7d02-43d8-b953-8d7f4c632e40",
         "Title": "Колекції",
         "Questions": [
           {
@@ -417,14 +417,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "b95880d4-3d81-4afb-b7b4-2f70c46da0e4",
+            "Id": "74e517c1-2b44-4aa4-a8d1-e0ef1b35981a",
             "Text": "Яка колекція зберігає елементи за принципом \u0022Ключ-Значення\u0022?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Масив",
-            "Id": "5a3adf48-2b0d-41ea-9a43-54e3b8453c4a",
+            "Id": "d293e5ef-3324-4969-b563-5d39f52b6270",
             "Text": "Як називається фіксована за розміром структура даних?",
             "Difficulty": 1
           },
@@ -448,14 +448,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "bc7404fa-3f00-42c3-b549-d44369051f11",
+            "Id": "348aef4f-e80a-4575-8239-d3f7a844775d",
             "Text": "Який метод додає елемент у кінець List?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Count",
-            "Id": "5e285380-8b8b-4866-8dea-9b46f1b102fb",
+            "Id": "5d83ce7a-a72e-41a4-9816-8603b2830083",
             "Text": "Яка властивість повертає кількість елементів у List?",
             "Difficulty": 1
           },
@@ -479,7 +479,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "d7160f12-81fa-4fc3-be8c-667270613f74",
+            "Id": "c0b168f8-01dd-4657-b65c-74519463cbc2",
             "Text": "Що найчастіше використовується для зручного перебору колекцій?",
             "Difficulty": 1
           },
@@ -503,7 +503,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "1b22cdb6-9753-466f-b97f-6a8cb8062791",
+            "Id": "243ecd5b-2a6c-4c98-9088-4fc346a9b5e8",
             "Text": "Які колекції реалізують інтерфейс IEnumerable?",
             "Difficulty": 2
           },
@@ -527,7 +527,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "bedac1c6-8578-4135-a0aa-5a4d453a2839",
+            "Id": "0e5bc76e-9369-4db1-b440-aadb8a6966de",
             "Text": "Оберіть колекції, де елементи гарантовано зберігаються або витягуються у визначеному порядку",
             "Difficulty": 2
           },
@@ -551,14 +551,14 @@
                 "IsCorrect": true
               }
             ],
-            "Id": "ddaa8bb9-6ea4-4688-9d18-2e7459c416de",
+            "Id": "05e9894a-2815-412f-99ee-dabbfe35734e",
             "Text": "Які операції виконуються дуже швидко (O(1)) для HashSet?",
             "Difficulty": 2
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Stack",
-            "Id": "66d8bf21-6299-412a-83cb-2cbfea3362c5",
+            "Id": "5257c168-ea22-480b-8ce0-97fea419caf9",
             "Text": "Яка колекція реалізує принцип LIFO?",
             "Difficulty": 3
           },
@@ -582,7 +582,7 @@
                 "IsCorrect": true
               }
             ],
-            "Id": "6e4d4e59-df7a-4cf3-a810-76e7ffb7ee46",
+            "Id": "db9a47e1-6750-4c6a-ab86-afc909b5c052",
             "Text": "Які твердження щодо IEnumerable та IQueryable правильні?",
             "Difficulty": 3
           }
@@ -591,11 +591,11 @@
     ]
   },
   {
-    "Id": "b592828e-f357-4db7-8153-f85470c2a714",
+    "Id": "ec41497c-5405-464a-a535-36fdd93a9fee",
     "Name": "Алгоритми та структури даних",
     "Tests": [
       {
-        "Id": "205047ee-a9f0-45ba-a8a9-1f482a58c959",
+        "Id": "a704ca9a-e7ca-49c8-b0b9-b806273373cd",
         "Title": "Сортування",
         "Questions": [
           {
@@ -618,14 +618,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "a04ff39e-0dd7-49b7-a02a-6b50454cfd97",
+            "Id": "815fcc27-79c6-44d9-9a95-1c89bea9075f",
             "Text": "Яка середня часова складність алгоритму QuickSort?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Бульбашка",
-            "Id": "758684aa-4e98-4cfd-89a4-900cfec7dae8",
+            "Id": "ab37a26a-1e98-4a4c-9b9b-7bb6b35c3e6c",
             "Text": "Як називається алгоритм сортування, де сусідні елементи міняються місцями?",
             "Difficulty": 1
           },
@@ -649,14 +649,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "b14f073a-33c6-45c0-86f8-30d8048b1155",
+            "Id": "9cf0910c-f64f-4f9a-a0f6-5bd3cbae7740",
             "Text": "Яка часова складність сортування вибором (Selection Sort) у найгіршому випадку?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Merge sort",
-            "Id": "bfdf0cd1-4e9c-4193-94ac-e9abb690dace",
+            "Id": "978988b2-784e-45bf-afc8-84210b99c7f0",
             "Text": "Яке сортування використовує принцип \u0022розділяй і володарюй\u0022 та злиття підсписків?",
             "Difficulty": 1
           },
@@ -680,7 +680,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "81051015-4072-4ae5-977f-9990316e6c1d",
+            "Id": "ef929ce3-0dbc-44b1-a115-1c0ea8406ff5",
             "Text": "Чи є сортування вставками ефективним для майже відсортованих масивів?",
             "Difficulty": 1
           },
@@ -704,7 +704,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "77981d2d-e1ba-48d8-abc8-d5c1de29f3ec",
+            "Id": "a1f7ddaf-71b5-4835-b841-2fca9e071b4f",
             "Text": "Які з цих алгоритмів мають складність O(n log n) у середньому?",
             "Difficulty": 2
           },
@@ -728,7 +728,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "18998843-c43a-48f0-a5af-ca15635ed2b6",
+            "Id": "c1976e7c-e359-4661-b72f-7ae39c347748",
             "Text": "Які алгоритми сортування є стабільними (Stable)?",
             "Difficulty": 2
           },
@@ -752,14 +752,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "be0cbc1e-2cf1-4d47-ab76-7999e4ced0e6",
+            "Id": "cab103c4-6f40-4165-b0a4-d39f73797566",
             "Text": "Оберіть алгоритми, які сортують без прямого порівняння елементів між собою",
             "Difficulty": 2
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Counting Sort",
-            "Id": "ad92b63a-f70e-460b-8d96-99178263f3a1",
+            "Id": "ee48238e-e537-4b53-874e-7d6dcec038ba",
             "Text": "Який алгоритм найшвидший для цілих чисел у вузькому діапазоні значень (наприклад, від 1 до 100)?",
             "Difficulty": 3
           },
@@ -783,14 +783,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "0e4d1c16-ac51-4573-b1cd-4166c3ba0b4b",
+            "Id": "99d2d139-3c11-452b-9cef-00b17ea26ab5",
             "Text": "Які проблеми можуть виникнути при використанні QuickSort?",
             "Difficulty": 3
           }
         ]
       },
       {
-        "Id": "3495e533-8785-451b-8141-05cd73c05f01",
+        "Id": "9bbad2bf-5ef3-44a0-9f39-915e96700341",
         "Title": "Лінійні структури даних",
         "Questions": [
           {
@@ -813,14 +813,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "2c2244f7-1695-4a80-9fee-788675c854e0",
+            "Id": "b28265e3-7417-4097-94d6-f85b0d5c3167",
             "Text": "Який принцип роботи у структури даних Стек (Stack)?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Enqueue",
-            "Id": "ff269812-6fca-40ef-84c1-fb3e3d624ce0",
+            "Id": "d00074d8-d10b-493e-959a-5ba7c7b46b98",
             "Text": "Як називається операція додавання елемента в чергу?",
             "Difficulty": 1
           },
@@ -844,14 +844,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "e2f81203-52b7-432a-8ac9-77dcb60b50d8",
+            "Id": "70675b44-b2b0-4e47-9287-9e59826e288b",
             "Text": "Як називається структура, де кожен елемент містить посилання на наступний?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Head",
-            "Id": "bfd6c8d6-3d2d-4b3e-b8df-8ec9b3d12370",
+            "Id": "43336d65-7419-46aa-93e1-b3f09526e2ca",
             "Text": "Як називається перший елемент зв\u0027язного списку?",
             "Difficulty": 1
           },
@@ -875,7 +875,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "359969d7-9551-4ed4-b64c-71d59dca40e3",
+            "Id": "b70c131c-b661-4fb1-af96-0bea7c90c0ee",
             "Text": "Яка складність пошуку елемента за індексом у зв\u0027язному списку?",
             "Difficulty": 1
           },
@@ -899,7 +899,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "5a7e7b77-55e0-4879-84d4-dc977b4ff72a",
+            "Id": "94d4f171-d3ce-4fac-8c33-b1d5b4be6e4b",
             "Text": "Які операції виконуються за O(1) у класичному Стеку?",
             "Difficulty": 2
           },
@@ -923,7 +923,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "4a2cb809-a82d-4e7a-a440-ec906aea78e9",
+            "Id": "88c20ec6-c8fb-443a-9ae9-5707dc0e328a",
             "Text": "Які переваги зв\u0027язних списків над статичними масивами?",
             "Difficulty": 2
           },
@@ -947,14 +947,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "9a0a47be-472e-41bb-b823-b4568341c4de",
+            "Id": "9ddc5eb1-e1a0-4ad3-8382-3b6ab51810a4",
             "Text": "У яких структурах даних реалізовано принцип FIFO?",
             "Difficulty": 2
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Deque",
-            "Id": "5405a85a-17da-4285-bba7-aa016883cd1a",
+            "Id": "12bc4564-0347-47b3-826a-446e6892cf48",
             "Text": "Як називається черга, де можна додавати та видаляти елементи з обох кінців?",
             "Difficulty": 3
           },
@@ -978,14 +978,14 @@
                 "IsCorrect": true
               }
             ],
-            "Id": "442f2647-3904-4688-a7eb-d656ff631c0e",
+            "Id": "6e6eeed0-667e-4dc0-bf3b-f9b78b12f582",
             "Text": "Які твердження щодо масивів та списків правильні?",
             "Difficulty": 3
           }
         ]
       },
       {
-        "Id": "12a79bd4-8f9b-49c2-8830-c565f9d020c7",
+        "Id": "8c8b4154-74be-48e8-bd0e-b5ecea6e1fd2",
         "Title": "Геш-функції",
         "Questions": [
           {
@@ -1008,14 +1008,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "55bc1496-9867-48cb-85fd-9ad51e35ad63",
+            "Id": "c0c5ec5e-7663-4866-a9e7-95a17881efb9",
             "Text": "Для чого використовується геш-функція у структурах даних?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Колізія",
-            "Id": "ce3d1866-b856-4ef6-a3e5-e64d564d3cb0",
+            "Id": "7a12deca-a523-4351-a969-6164aa66b6ef",
             "Text": "Як називається ситуація, коли два різних ключі дають однаковий хеш-код?",
             "Difficulty": 1
           },
@@ -1039,14 +1039,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "2cc32a2e-b65b-4294-8509-aecf75b009d4",
+            "Id": "f7c9b9b4-2bd0-4e72-8f48-e962a893bdf6",
             "Text": "Яка ідеальна часова складність пошуку в хеш-таблиці?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Load Factor",
-            "Id": "d7bada23-5fe5-4a53-8c7e-a55d32bb8e05",
+            "Id": "82968109-aa1b-48d4-9f6d-2450e453ba5c",
             "Text": "Як називається коефіцієнт, що визначає ступінь заповненості хеш-таблиці?",
             "Difficulty": 1
           },
@@ -1070,7 +1070,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "dd4dd1b1-97cb-4b3c-9341-9cb2c6f41dc4",
+            "Id": "c050e0b6-e983-4221-b476-17abdf9ea1fd",
             "Text": "Який метод вирішення колізій використовує зв\u0027язні списки у комірках таблиці?",
             "Difficulty": 1
           },
@@ -1094,7 +1094,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "e0e1dc3b-99b5-4168-ac31-a7a30d8df240",
+            "Id": "a5e0eccf-4b47-44a0-8332-ab09f58cbf85",
             "Text": "Які існують методи відкритої адресації для вирішення колізій?",
             "Difficulty": 2
           },
@@ -1118,7 +1118,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "a94779eb-1f38-49d2-97ee-f29f11db78b8",
+            "Id": "c15133fa-5c5b-4213-8dfd-99c8513ab1e4",
             "Text": "Які властивості повинна мати ідеальна (добра) геш-функція?",
             "Difficulty": 2
           },
@@ -1142,14 +1142,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "b1949554-2db4-4812-ac81-5a4c369d352f",
+            "Id": "6d4e6b76-1286-4800-9397-527c32d0b85a",
             "Text": "Що відбувається, коли Load Factor перевищує встановлене лімітне значення?",
             "Difficulty": 2
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "SHA-1",
-            "Id": "1001b6b2-3636-4407-aa07-54b68fb41a4a",
+            "Id": "ed3d749d-7890-4c4e-8cb0-915713ab0b00",
             "Text": "Яка криптографічна геш-функція історично використовується в системі Git для ідентифікації комітів?",
             "Difficulty": 3
           },
@@ -1173,7 +1173,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "f33c7985-ea62-4db2-89c3-9fc39e08d978",
+            "Id": "97294d7e-6a3f-494d-b3bd-98aeb3f28f47",
             "Text": "Які з цих структур даних C# зазвичай реалізуються \u0022під капотом\u0022 на основі хеш-таблиць?",
             "Difficulty": 3
           }
@@ -1182,17 +1182,17 @@
     ]
   },
   {
-    "Id": "1826af0a-e0ca-473b-8d6c-5d60659768d0",
+    "Id": "8ed66c88-a849-4096-a021-fddf0082ed1d",
     "Name": "Математичний аналіз",
     "Tests": [
       {
-        "Id": "2d5a624a-37ca-42e1-918d-0952a2812ff8",
+        "Id": "8822c0d3-0207-4b0d-90b4-80d106933db8",
         "Title": "Границі",
         "Questions": [
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "8",
-            "Id": "9acb2420-2b91-4830-929f-c1b94973caa2",
+            "Id": "a3da65f0-ada5-405c-a73f-0b072c0efaf9",
             "Text": "Обчисліть границю: lim(x-\u003E5) (x \u002B 3)",
             "Difficulty": 1
           },
@@ -1216,14 +1216,14 @@
                 "IsCorrect": true
               }
             ],
-            "Id": "4e28d07f-4131-47dd-aa99-12065ea55fe9",
+            "Id": "42a71d2e-73ad-45b7-8cd6-4dc3d5b2e4c5",
             "Text": "Чому дорівнює перша чудова границя lim(x-\u003E0) (sin(x)/x)?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "0",
-            "Id": "c1c4c21e-0713-431b-9d13-0b9962d013d7",
+            "Id": "1dcd1c45-1f17-4971-84d4-e23b99eb3df2",
             "Text": "Чому дорівнює границя lim(x-\u003Eнескінченність) (1/x)?",
             "Difficulty": 1
           },
@@ -1247,14 +1247,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "94312d34-21f4-4d6e-8b39-6f0ec9c464f6",
+            "Id": "3215da27-9390-4325-842c-15c23e1b7f5c",
             "Text": "Яке значення має границя lim(x-\u003E0) (cos(x))?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "C",
-            "Id": "f6d735a5-dd2d-4fc7-b619-3170825568f7",
+            "Id": "34e336ae-d2f3-4d60-9d1d-4d1cd1206d2f",
             "Text": "Чому дорівнює границя сталої величини C при x-\u003Ea?",
             "Difficulty": 1
           },
@@ -1278,7 +1278,7 @@
                 "IsCorrect": true
               }
             ],
-            "Id": "b6800ebb-ebdc-4883-8252-da4543e2791d",
+            "Id": "295d7dd4-dff3-468c-ad7d-ea4d8f338ecd",
             "Text": "Які з цих виразів є невизначеностями в теорії границь?",
             "Difficulty": 2
           },
@@ -1302,7 +1302,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "478f4a54-c81d-4fb7-a2a5-ae3e37d12154",
+            "Id": "39cfc82c-b467-4efa-8e47-3dd5789d7002",
             "Text": "Оберіть правильні властивості границь (при умові їх існування)",
             "Difficulty": 2
           },
@@ -1326,14 +1326,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "bd770bcd-00dd-40f7-aebe-b0d05651df6a",
+            "Id": "7341b546-3d47-44e3-aca4-086b435c2e5e",
             "Text": "Які методи використовують для розкриття невизначеностей?",
             "Difficulty": 2
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "e",
-            "Id": "a0899ba9-d5ee-470a-bc38-a67a070a3fc4",
+            "Id": "6bf26a3a-0fbc-4911-9408-17b911d1d36e",
             "Text": "Обчисліть другу чудову границю lim(x-\u003E0) ( (1\u002Bx)^(1/x) )",
             "Difficulty": 3
           },
@@ -1357,7 +1357,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "9a718b64-bd86-40f0-83ef-667fe1fac2c5",
+            "Id": "54bc836f-e80a-4636-9cdc-59c0a70f3ce5",
             "Text": "Які умови мають виконуватися для неперервності функції в точці x0?",
             "Difficulty": 3
           },
@@ -1381,7 +1381,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "c97abc65-d15d-45b2-8951-ced51519c7bd",
+            "Id": "164b4883-2f98-42cc-af8d-8a70262ec428",
             "Text": "Яке значення має границя lim(x-\u003E0) (cos(x))?",
             "Difficulty": 1
           },
@@ -1405,20 +1405,20 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "fea0ba2e-5fb7-4878-9120-6a9d8cfefdfb",
+            "Id": "973a7e70-1f46-4839-a7d9-103c6c53e169",
             "Text": "Чому дорівнює перша чудова границя lim(x-\u003E0) (sin(x)/x)?",
             "Difficulty": 1
           }
         ]
       },
       {
-        "Id": "3c046396-cf48-4f82-9d18-00595cabc7dd",
+        "Id": "b74639a2-eb36-4593-bb30-6abb7d5a34d7",
         "Title": "Похідні",
         "Questions": [
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "0",
-            "Id": "5fcb0a9e-4135-45f5-868e-d1c3345086b0",
+            "Id": "44c44dbe-53c1-45db-970a-1624e4aa31a6",
             "Text": "Чому дорівнює похідна від константи C\u0027?",
             "Difficulty": 1
           },
@@ -1442,7 +1442,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "a08dd2b9-5c33-45fc-889e-179386b4585f",
+            "Id": "f0aed1a3-abd9-4690-9193-2292c16db578",
             "Text": "Яка похідна функції f(x) = x^2?",
             "Difficulty": 1
           },
@@ -1466,7 +1466,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "3c2d3b27-3c91-4d05-a8d1-87b50aaff732",
+            "Id": "9d164c35-2865-4d73-b5f2-40b5d6d6385e",
             "Text": "Яка похідна функції f(x) = x^2?",
             "Difficulty": 1
           },
@@ -1490,14 +1490,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "6eab2508-cac3-4494-aa2f-8c9a9ccfb1da",
+            "Id": "6444d904-503c-464a-a314-ba2eca4972bd",
             "Text": "Похідна від sin(x) дорівнює",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Тангенс кута нахилу дотичної",
-            "Id": "5cbff12f-300d-4b1b-8c30-4963e0fc0dcd",
+            "Id": "6099676a-ae02-4d8d-b0c0-65f98936de80",
             "Text": "Як геометрично трактується значення похідної в точці?",
             "Difficulty": 1
           },
@@ -1521,7 +1521,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "862eb799-ef88-4789-99a4-ea8c5024805c",
+            "Id": "d3966c1c-6904-45c3-b728-e4b140a4bdce",
             "Text": "Похідна від e^x дорівнює",
             "Difficulty": 1
           },
@@ -1545,7 +1545,7 @@
                 "IsCorrect": true
               }
             ],
-            "Id": "dd22050b-670b-4289-a1b2-8e3a167cc754",
+            "Id": "c82e0153-2ac7-4361-ba91-1d2156696e9b",
             "Text": "Оберіть правильні правила диференціювання",
             "Difficulty": 2
           },
@@ -1569,7 +1569,7 @@
                 "IsCorrect": true
               }
             ],
-            "Id": "5ce046d2-50cf-40cf-bcea-b783d6251aa6",
+            "Id": "c044c6c7-3524-444f-ba32-c6e21fd6159c",
             "Text": "Які з наведених похідних обчислені правильно?",
             "Difficulty": 2
           },
@@ -1593,14 +1593,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "3f4da958-1c01-46e0-a200-3e19add03160",
+            "Id": "3aebd307-b9ec-4e91-b496-5509f16d8d51",
             "Text": "Які точки є критичними для функції?",
             "Difficulty": 2
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "1/x",
-            "Id": "c83dcc97-4d67-4632-bb8e-b9956857b05d",
+            "Id": "15589bbd-0e2d-470b-966a-08a7934b3576",
             "Text": "Яка похідна від функції ln(x)?",
             "Difficulty": 3
           },
@@ -1624,20 +1624,20 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "95caff8a-c26f-494f-ba51-3b0dc9683d3e",
+            "Id": "1d294156-ded5-40d5-8bfe-80d5a5af29e8",
             "Text": "Що означає, якщо друга похідна f\u0027\u0027(x) \u003E 0 на інтервалі?",
             "Difficulty": 3
           }
         ]
       },
       {
-        "Id": "f4e72854-5af2-4f1a-9274-f337d2b31480",
+        "Id": "9bbaa9fc-4932-49f3-90ac-310549848991",
         "Title": "Інтеграли",
         "Questions": [
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "x \u002B C",
-            "Id": "621b8f9d-cabf-4880-9705-cf956fd35296",
+            "Id": "2b2ae445-fa55-43f5-9b1f-2baf2178b47e",
             "Text": "Обчисліть невизначений інтеграл: integral (1) dx",
             "Difficulty": 1
           },
@@ -1661,7 +1661,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "96d53576-76ab-43b9-80d3-9eb92e125f06",
+            "Id": "0a02955c-03e4-4a5d-a739-17920a2d2604",
             "Text": "Чому дорівнює інтеграл integral (x) dx?",
             "Difficulty": 1
           },
@@ -1685,14 +1685,14 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "da801ac8-fac3-402c-9fc4-dce8c1bc98ff",
+            "Id": "b76af0c7-569c-4db2-ad7b-38284ecb6773",
             "Text": "Що знаходять за допомогою визначеного інтеграла геометрично?",
             "Difficulty": 1
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "Первісна",
-            "Id": "f8ca1bbd-d105-4ff7-99b7-74997cd9e4ca",
+            "Id": "619a893a-2422-43fb-bf23-beb1ca2e2843",
             "Text": "Як називається функція F(x), для якої виконується F\u0027(x) = f(x)?",
             "Difficulty": 1
           },
@@ -1716,7 +1716,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "6daeb8ab-7443-4b3b-a433-7220629d0e4a",
+            "Id": "944c51f6-137c-44ae-88e9-909718ce82e0",
             "Text": "Формула Ньютона-Лейбніца має вигляд",
             "Difficulty": 1
           },
@@ -1740,7 +1740,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "033b6ca6-d570-41e8-b526-bb87b7ed8dcd",
+            "Id": "aca33d85-ee7f-41e1-8973-69ff3921d524",
             "Text": "Оберіть правильні властивості визначеного інтеграла",
             "Difficulty": 2
           },
@@ -1764,7 +1764,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "11651867-50e2-4ed2-8329-8491e7a4e40a",
+            "Id": "14c6713d-19ee-4871-a86c-9ac8bb61e173",
             "Text": "Які методи інтегрування існують?",
             "Difficulty": 2
           },
@@ -1788,14 +1788,14 @@
                 "IsCorrect": true
               }
             ],
-            "Id": "8128d208-e668-4e0a-8c8e-20dcf3e9e5fd",
+            "Id": "19bc2974-8806-4944-816e-c6df955fc736",
             "Text": "Оберіть правильно обчислені інтеграли",
             "Difficulty": 2
           },
           {
             "QuestionType": "Open",
             "CorrectAnswerText": "integral u dv = uv - integral vdu",
-            "Id": "b91d1f04-eacc-4202-92ef-a108d312956a",
+            "Id": "0f31acf8-df6e-4e96-81db-70064273ffa4",
             "Text": "Яка формула інтегрування частинами? (напишіть через u, v, du, dv)",
             "Difficulty": 3
           },
@@ -1819,7 +1819,7 @@
                 "IsCorrect": false
               }
             ],
-            "Id": "94ba85ac-292b-4374-8fe2-3a14361c785c",
+            "Id": "6ab5a868-d0fc-4a7b-ae51-9c5bf457442e",
             "Text": "Які інтеграли називаються невласними?",
             "Difficulty": 2
           }

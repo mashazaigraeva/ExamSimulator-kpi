@@ -22,13 +22,23 @@ namespace ExamSimulator.UI
 
         public void Run()
         {
-            string input = "";
-            while (input != "0")
+            try
             {
-                PrintMainMenu();
-                input = Console.ReadLine();
-                ProcessInput(input);
+                string input = "";
+                while (input != "0")
+                {
+                    PrintMainMenu();
+                    input = Console.ReadLine();
+                    ProcessInput(input);
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Деталі: {ex.Message}");
+                Console.WriteLine("Будь ласка, перевірте файли даних у папці 'data' на наявність пошкоджень.");
+                Console.WriteLine("Натисніть Enter для завершення роботи...");
+                Console.ReadLine();
+            }            
         }
 
 
